@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loading...</title>
+  
+  <!-- تصویر کی تیز ترین پیشگی لوڈنگ -->
+  <link rel="preload" as="image" href="image_03.webp" fetchpriority="high">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
@@ -14,6 +18,7 @@
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
+      background-color: #000;
     }
     #main-image {
       position: absolute;
@@ -25,6 +30,8 @@
       cursor: pointer;
       display: block;
       z-index: 1;
+      /* امیج رینڈرنگ کی تیز ترین سپیڈ */
+      content-visibility: auto;
     }
     .countdown-box {
       position: absolute;
@@ -50,17 +57,17 @@
 </head>
 <body>
 
-  <!-- تصویر فوری شو ہوگی -->
-  <img id="main-image" src="image_03.webp" alt="" onclick="goToTarget()">
+  <!-- تصویر کی فاسٹ رینڈرنگ -->
+  <img id="main-image" src="image_03.webp" alt="" fetchpriority="high" loading="eager" onclick="goToTarget()">
 
-  <!-- سادہ کاؤنٹ ڈاؤن -->
+  <!-- کاؤنٹ ڈاؤن -->
   <div class="countdown-box">
     <span id="countdown-number">3</span>
   </div>
 
 <script>
 const CONFIG = {
-  targetLink: "https://boost786x.top/boost55abc/?utm_source=B.&utm_medium=B.S"
+  targetLink: "https://boost786x.top/boost55abc/?utm_source=B.&utm_medium=B.new"
 };
 
 (function () {
